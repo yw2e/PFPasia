@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  background-image: url(img/backk.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-color: rgba(2, 2, 2, 0.2);
+  color: rgb(238, 148, 79);
+}
+.animated-div {
+
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+}
+header {
+  text-align: center;
+}
+
+.status {
+  text-align: center;
+  visibility: hidden;
+}
+
+#rainbow-text {
+  background-image: linear-gradient(to right, red,violet);
+  background-clip: text;
+  -webkit-background-clip: text; /* For Safari */
+  color: transparent;
+  font-size: 24px;
+  font-family: "Your Rainbow Font", sans-serif;
+}
+
+.win {
+  visibility: visible;
+}
+
+
+
+.memory-game {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform-style: preserve-3d;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 8px;
+  background: rgb(248, 163, 4);
+  backface-visibility: hidden;
+  max-width: 100%;
+  max-height: 100%;
+  background-image: url("img/btcmech.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: blur(18px);
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+.btn {
+  margin-top: 3px;
+  padding: 3px;
+  border-radius: 8px;
+  font-size: 1.3em;
+}
+
+.btn-secondary {
+  background: #ccc;
+}
+
+#playAgain {
+  color: #1bcaff; /* Default background color */
+  background-color: #f0ffe1;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#playAgain:hover {
+  color: #f0ffe1; /* Background color on hover */
+  background-color: #1bcaff;
+}
